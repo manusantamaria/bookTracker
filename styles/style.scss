@@ -1,0 +1,148 @@
+@import './utilities/mixins';
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: #00008b;
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.grid-container-home {
+    display: grid;
+    grid-template-rows: 8vh 100vh 30vh;
+    background-color: #fce7e766;
+    .header-Home {
+        display: grid;
+        grid-template-columns: 35% 50% 15%;
+
+        &__start {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            &--brand {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .header-Home__search {
+                background-color: transparent;
+                border: 1px solid #ffd2d2;
+                border-radius: 14px;
+                width: 40vw;
+                height: 5vh;
+                display: grid;
+                grid-template-columns: 90% 10%;
+                &--input {
+                    width: 100%;
+                    overflow: hidden;
+                    ::placeholder{
+                        color: #00008b;
+                    }
+                }
+
+                .search__input {
+                    background-color: transparent;
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    letter-spacing: 0.2rem;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                &--btn {
+                    display: flex;
+                    margin: auto;
+                }
+            }
+        }
+
+        &__end {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
+    .container-Home {
+        display: grid;
+        grid-template-columns: 10% 90%;
+
+        // .aside-Home {
+        // }
+
+        .main-Home{
+            padding: 1.5rem 2rem;
+            &__recommended{
+                margin-bottom: 2vh;
+                &--h1{
+                    @include title;
+                }
+                &-container{
+                    @include container;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 20.5vh);
+                    .main-Home__recommended-box{
+                        display: grid;
+                        grid-template-columns: 35% 65%;
+                        &--img{
+                            height: 20.5vh;
+                            img{
+                                max-width: 100%;
+                                max-height: 100%;
+                            }
+                        }
+                        .main-Home__recommended-info{
+                            margin: 0.4vh 0 0.1vh 1vw;
+                            &--body{
+                                // display: flex;
+                                // align-items:stretch;    
+                                line-height: 1.5;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            &__current{
+                &--h2{
+                    @include title;
+                }
+                &-container{
+                    @include container;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 17.5vh);
+                    .main-Home__current-box{
+                        display: grid;
+                        grid-template-columns: 35% 65%;
+                        // &--img{
+                            // background-color: honeydew;
+                        // }
+                    }
+                    .main-Home__current-info{
+                        margin: 0.4vh 0 0.1vh 1vw;
+                        &--body{
+                            line-height: 1.5;
+                        }
+                        &--title{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+            }
+        }
+    }
+

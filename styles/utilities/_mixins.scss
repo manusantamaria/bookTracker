@@ -1,0 +1,9 @@
+@mixin title{
+    font-size: 2rem;
+}
+
+@mixin container{
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
